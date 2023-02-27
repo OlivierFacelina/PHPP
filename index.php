@@ -57,11 +57,11 @@ $languages = ['C', 'Java', 'Perl',];
 
                 <div id="collapseOne" class="collapse show" role="tabpanel" aria-labelledby="headingOne">
                     <div class="card-body">
-                        <p>Somme : <?= $int1?> + <?= $int2?> = <?= $int1 + $int2?></p>
-                        <p>Produit : <?= $int1?> * <?= $int2?> = <?= $int1 * $int2?></p>
-                        <p>Modulo : <?= $int1?> % <?= $int2?> = <?= $int1 % $int2?></p>
-                        <p>Différence : <?= $int1?> - <?= $int2?> = <?= $int1 - $int2?></p>
-                        <p>Division : <?= $int1?> / <?= $int2?> = <?= $int1 / $int2?></p>
+                        <p>Somme : <?= $int1 . ' + ' . $int2 . ' = ' . $int1 + $int2?></p>
+                        <p>Produit : <?= $int1 . ' * ' . $int2 . ' = ' . $int1 * $int2?></p>
+                        <p>Modulo : <?= $int1 . ' % ' . $int2 . ' = ' . $int1 % $int2?></p>
+                        <p>Différence : <?= $int1 . ' - ' . $int2 . ' = ' . $int1 - $int2?></p>
+                        <p>Division : <?= $int1 . ' / ' . $int2 . ' = ' . $int1 / $int2?></p>
                     </div>
                 </div>
             </div>
