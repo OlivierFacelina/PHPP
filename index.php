@@ -119,12 +119,12 @@ $languages = ['C', 'Java', 'Perl',];
                         </p>
                         <p>La variable un est égale à la variable deux :
                             <span class="bg-secondary p-2">  
-                                <!-- <?php if ($int1 = $int2) { ?>
+                                <!-- <?php if ($int1 == $int2) { ?>
                                     <b>Vrai</b>
                                 <?php } else { ?>
                                     <b>Faux</b>
                                 <?php }?>   -->
-                                <?= $int1 = $int2 ? 'Vrai' : 'Faux' ?>
+                                <?= $int1 == $int2 ? 'Vrai' : 'Faux' ?>
                             </span>
                         </p>
                         <p>La variable un est strictement égale à la variable deux :
@@ -174,7 +174,6 @@ $languages = ['C', 'Java', 'Perl',];
                         <h4>Liste des langages dont la syntaxe du PHP est inspirée</h4>
                         <?php for ($i=0; $i < count($languages); $i++) {
                             echo "<li>" . $languages[$i] . "</li>";
-                    
                         }?>    
                     </div>
                 </div>
