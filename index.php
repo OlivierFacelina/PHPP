@@ -98,57 +98,63 @@ $languages = ['C', 'Java', 'Perl',];
                             La variable un est supérieure à la variable deux :
                             <!-- écrire votre code dans le span -->
                             <span class="bg-secondary p-2"> 
-                                <?php if ($int1 >= $int2) { ?>
+                                <!-- <?php if ($int1 >= $int2) { ?>
                                     <b>Vrai</b>
                                 <?php } else { ?>
                                     <b>Faux</b>
-                                <?php }?> 
+                                <?php }?>  -->
+                                <?= $int1 >= $int2 ? 'Vrai' : 'Faux' ?>
                             </span>
                         </p>
                         <p>La variable un est strictement supérieure à la variable deux :
                             <!-- écrire votre code dans le span -->
                             <span class="bg-secondary p-2">  
-                                <?php if ($int1 >= $int2) { ?>
+                                <!-- <?php if ($int1 >= $int2) { ?>
                                     <b>Vrai</b>
                                 <?php } else { ?>
                                     <b>Faux</b>
-                                <?php }?>  
+                                <?php }?>   -->
+                                <?= $int1 > $int2 ? 'Vrai' : 'Faux' ?>
                             </span>
                         </p>
                         <p>La variable un est égale à la variable deux :
                             <span class="bg-secondary p-2">  
-                                <?php if ($int1 = $int2) { ?>
+                                <!-- <?php if ($int1 = $int2) { ?>
                                     <b>Vrai</b>
                                 <?php } else { ?>
                                     <b>Faux</b>
-                                <?php }?>  
+                                <?php }?>   -->
+                                <?= $int1 = $int2 ? 'Vrai' : 'Faux' ?>
                             </span>
                         </p>
                         <p>La variable un est strictement égale à la variable deux :
                             <span class="bg-secondary p-2">
-                                <?php if ($int1 === $int2) { ?>
+                                <!-- <?php if ($int1 === $int2) { ?>
                                     <b>Vrai</b>
                                 <?php } else { ?>
                                     <b>Faux</b>
-                                <?php }?>  
+                                <?php }?>   -->
+                                <?= $int1 === $int2 ? 'Vrai' : 'Faux' ?>
                             </span>
                         </p>
                         <p>La variable un est supérieure ou égale à la variable deux :
                             <span class="bg-secondary p-2">
-                                <?php if ($int1 > $int2) { ?>
+                                <!-- <?php if ($int1 > $int2) { ?>
                                     <b>Vrai</b>
                                 <?php } else { ?>
                                     <b>Faux</b>
-                                <?php }?>  
+                                <?php }?>   -->
+                                <?= $int1 > $int2 ? 'Vrai' : 'Faux' ?>
                             </span>
                         </p>
                         <p>La variable un est inférieure ou strictement égale à la variable deux :
                             <span class="bg-secondary p-2">  
-                                <?php if ($int1 <= $int2) { ?>
+                                <!-- <?php if ($int1 <= $int2) { ?>
                                     <b>Vrai</b>
                                 <?php } else { ?>
                                     <b>Faux</b>
-                                <?php }?>  
+                                <?php }?>   -->
+                                <?= $int1 <= $int2 ? 'Vrai' : 'Faux' ?>
                             </span>
                         </p>
                     </div>
