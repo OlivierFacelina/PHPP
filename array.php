@@ -53,11 +53,9 @@ $revisedCourses = [
 ];
 
 // 12. Inversion des notes d'algorithmique et de marketing
-$revisedCourses = array_flip($revisedCourses);
-$temp = $revisedCourses[13];
-$revisedCourses[13] = $revisedCourses[10];
-$revisedCourses[10] = $temp;
-$revisedCourses = array_flip($revisedCourses);
+$temp = $revisedCourses["Algorithmique"];
+$revisedCourses["Algorithmique"] = $revisedCourses["Marketing"];
+$revisedCourses["Marketing"] = $temp;
 
 // 13. Tableau de notes des étudiants (students)
 $marksStudents = [
