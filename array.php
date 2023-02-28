@@ -1,10 +1,10 @@
 <?php
-$lastName = 'olivier';
-$firstName = 'Facelina';
+$firstname = 'olivier';
+$lastname = 'Facelina';
 $yearsOld = 21;
-$city = 'Amiens';
+$city = 'amiens';
 // 1. chaine guillemets simples (stringSingleQuotes)
-$stringSingleQuotes = 'Bonjour je m’appelle ' .ucwords($lastName) . ' ' .strtoupper($firstName). ', j’ai ' .$yearsOld . ' ans et j’habite ' .$city .'.';
+$stringSingleQuotes = 'Bonjour je m\'appelle ' .ucfirst($firstname) . ' ' .strtoupper($lastname). ', j\'ai ' .$yearsOld . ' ans et j\'habite ' .ucfirst($city) .'.';
 
 // 2.  chaine guillemets doubles (stringDoubleQuotes)
 $stringDoubleQuotes = "Je suis une " . '"chaîne de caractères"' . ".";
@@ -44,13 +44,7 @@ $subject = array(
 $courses = array_combine($subject, $marks);
 
 // copie du tableau pour ne écraser l'original (revisedCoursesGrades)
-$revisedCourses = [
-    "HTML/CSS" => 15,
-    "Algorithmique" => 13,
-    "Anglais" => 8,
-    "Marketing" => 10,
-    "UI/UX" => 17
-];
+$revisedCourses = $courses;
 
 // 12. Inversion des notes d'algorithmique et de marketing
 $temp = $revisedCourses["Algorithmique"];
@@ -159,7 +153,7 @@ $marksStudents = [
                <!-- Question 6 -->
                 <div class="card bg-primary text-white text-center p-3">
                     <h2 class="card-title">Longueur d'une chaine</h2>
-                    <p>Le prénom contient <?= strlen($lastName) ?> caractères.</p>
+                    <p>Le prénom contient <?= strlen($firstname) ?> caractères.</p>
                 </div>
 
                  <!-- Question 7 -->
@@ -211,7 +205,10 @@ $marksStudents = [
                         <h2 class="card-title">Tableau - Notes étudiants</h2>
                         <p class="card-text">
                             <pre>
-                                 <?php print_r($marksStudents)?>
+                                 <?php 
+                                 for ($i = 1; $i <= count($marksStudents); $i++) {
+                                    print_r($marksStudents['etudiant' .$i]);
+                                 }?>
                             </pre>
                         </p>
                     </div>
