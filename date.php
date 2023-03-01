@@ -1,4 +1,7 @@
-<?php $formatter = new IntlDateFormatter('fr_FR', IntlDateFormatter::LONG, IntlDateFormatter::NONE); ?>
+<?php 
+$dt = time();
+$formatter = new IntlDateFormatter('fr_FR');
+$formatter -> setPattern('EEEE Q MMMM Y') ?>
 <!doctype html>
 <html lang="fr">
 
@@ -34,7 +37,7 @@
                 <!-- 4. date en français -->
                 
                 <!-- Définir la configuration locale par défaut au fr  -->
-                <p class="text-muted">Nous sommes le : <?= $formatter->format(time());?></p>
+                <p class="text-muted">Nous sommes le : <?= $formatter->format($dt)?></p>
                 <br>
                 
                 <!-- 5. Timestamp courant -->
