@@ -1,19 +1,21 @@
 <?php
-$password = 'Taspaslemotdepasse';
+$password = 'Taspaslemodepasse';
 $message = 'Bravo !';
 $majuscule = preg_match('`[A-Z]`',$password);
 $minuscule = preg_match('`[a-z]`',$password);
 $number = preg_match('`[0-9]`',$password);
-
+$alert = '';
 
 if (strlen($password) < 8) {
     $message = 'Mot de passe est trop court, le mot de passe doit comporter au moins 8 caractères';
 } 
 
-if(strlen($password) > 8 && $majuscule && $minuscule && $number) {
+elseif(strlen($password) > 8 && $majuscule && $minuscule && $number) {
   $message = "Le mot de passe est valide.";
+  $alert = "alert-success";
 } else {
   $message = "Le mot de passe doit contenir au moins une majuscule, une minuscule, un chiffre et être d'une longueur minimale de 8 caractères.";
+  $alert = "alert-danger";
 }
 ?>
 <!DOCTYPE html>
@@ -34,7 +36,7 @@ if(strlen($password) > 8 && $majuscule && $minuscule && $number) {
   <div class="container">
     <h1 class="text-center">Condition - PHP</h1>
     
-    <div class="alert"> <!-- ajoutez la classe bootstrap dynamiquement -->
+    <div class="alert <?= $alert?>">
       <p><?= $message?></p>
     </div>
   </div>
