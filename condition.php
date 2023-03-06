@@ -1,5 +1,5 @@
 <?php
-$password = 'Taspaslemodepasse';
+$password = 'Taspaslemo1depasse';
 $message = 'Bravo !';
 $majuscule = preg_match('`[A-Z]`',$password);
 $minuscule = preg_match('`[a-z]`',$password);
@@ -18,6 +18,7 @@ elseif(strlen($password) > 8 && $majuscule && $minuscule && $number) {
   $alert = "alert-danger";
 }
 ?>
+
 <!DOCTYPE html>
 <html lang="fr">
 
