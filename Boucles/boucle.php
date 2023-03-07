@@ -12,19 +12,25 @@
 <body>
         <div class="board">
             <?php
-                $value = 0;
-                for ($col = 0; $col < 8; $col++) {
-                    $value = $col;
-                    for ($row = 0; $row < 8; $row++) {
-                        if ($value % 2 == 0) {
-                            echo "<div class=\"black_tile\">" . "</div>";
-                            $value++;
-                        }
-                        else {
-                            echo "<div class=\"white_tile\">" . "</div>";
-                            $value++;
-                        }
-                    }
+                // $value = 0;
+                // for ($col = 0; $col < 8; $col++) {
+                //     $value = $col;
+                //     for ($row = 0; $row < 8; $row++) {
+                //         if ($value % 2 == 0) {
+                //             echo "<div class=\"black_tile\">" . "</div>";
+                //             $value++;
+                //         }
+                //         else {
+                //             echo "<div class=\"white_tile\">" . "</div>";
+                //             $value++;
+                //         }
+                //     }
+                // }
+
+                for ($rows=0; $rows < 8; $rows++) { 
+                    for ($cols=0; $cols < 8; $cols++) { ?>
+                        <div class="<?= ($rows + $cols) % 2 === 0 ? 'black_tile' : 'white_tile' ?>"></div>
+                    <?php }
                 }
             ?>
         </div>

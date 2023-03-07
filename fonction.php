@@ -41,6 +41,7 @@ EOC;
  */
 
 function getLyricsList($lyrics) {
+    $stringList = [];
     $stringList = explode("\n", $lyrics);
     print_r($stringList);
 }

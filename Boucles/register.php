@@ -3,6 +3,8 @@
 $csvData = array_map('str_getcsv', file('assets/departments_regions_france_2016.csv'));
 // suppression de la ligne d'entête du tableau
 $deps_regions = array_slice($csvData, 1);
+$regions = [];
+// var_dump($regions)
 ?>
 
 <!DOCTYPE html>
@@ -33,7 +35,7 @@ $deps_regions = array_slice($csvData, 1);
         <h1 class="text-center h3">Formulaire d'inscription</h1>
         <div class="row justify-content-center">
             <div class="col-md-5">
-                <form action="" class="d-flex flex-column">
+                <form action="" method="post" class="d-flex flex-column">
                     <label for="lastname" class="mt-3">Nom :<br>
                     <input type="text" id="lastname" name="lastname" class="w-100 mt-3" placeholder="Saisir votre nom...">
                     <label for="birthdate" class="mt-3">Date de naissance :<br>
@@ -41,20 +43,23 @@ $deps_regions = array_slice($csvData, 1);
                     <label for="department" class="mt-3">Département :<br>
                     <select name="department" class="w-100 mt-3">Département de résidence :
                         <?php 
-                        $i = 1;
-                        foreach ($csvData as $department) {
-                            echo("<option value=\"value$i\">" . $department[1] . "</option>");
-                            $i++;
-                        }
+                        foreach ($deps_regions as $deps_region) { 
+                            ?>
+                            <option value="<?= $deps_region[0] ?>"><?= $deps_region[1] ?></option>
+                            <?php }
                         ?>
                     </select>
                     <label for="department" class="mt-3">Région :<br>
                     <select name="region" class="w-100 mt-3">Région de résidence :
-                    <?php 
-                        $i = 1;
-                        foreach ($csvData as $region) {
-                            print_r("<option value=\"value$i\">" . $region[3] . "</option>");
-                            $i++;
+                        <?php  
+                        foreach ($deps_regions as $deps_region) { 
+                            if ($deps_region[2] != 'NULL' && !in_array($deps_region[2], $regions)) {
+                                // var_dump('ici');
+                                array_push($regions,$deps_region[2]);
+                            
+                            ?>
+                            <option value="<?= $deps_region[2] ?>"><?= $deps_region[3] ?></option>
+                            <?php }
                         }
                         ?>
                     </select>
