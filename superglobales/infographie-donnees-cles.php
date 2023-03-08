@@ -1,14 +1,14 @@
 <?php
 // Rediriger l'utilisateur vers une autre page web
 	header("Content-Type: image/svg+xml");
-	$communes = $_GET["communes"];
-	$population = $_GET["population"];
-	$mobilities = $_GET["mobilities"];
-	$logements = $_GET["logements"];
-	$emplois = $_GET["emplois"];
-	$chambres = $_GET["chambres"];
-	$campings = $_GET["campings"];
-	$agricoles = $_GET["agricoles"];
+	$communes = filter_input(INPUT_GET,'communes',FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+	$population = filter_input(INPUT_GET,'population',FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+	$mobilities = filter_input(INPUT_GET,'mobilities',FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+	$logements = filter_input(INPUT_GET,'logements',FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+	$emplois = filter_input(INPUT_GET,'emplois',FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+	$chambres = filter_input(INPUT_GET,'chambres',FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+	$campings = filter_input(INPUT_GET,'campings',FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+	$agricoles = filter_input(INPUT_GET,'agricoles',FILTER_SANITIZE_FULL_SPECIAL_CHARS);
 ?>
 
 <!-- Generator: Adobe Illustrator 20.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->

@@ -8,7 +8,15 @@
 </head>
 <body>
     <?php include dirname(__FILE__) . "./header.php" ?>
-    <img src="./infographie-donnees-cles.php?communes=9&population=200&mobilities=50000&logements=200000&emplois=1&chambres=2000&campings=1000&agricoles=5000">
+    <img src="./infographie-donnees-cles.php
+    ?communes=9
+    &population=200
+    &mobilities=50000
+    &logements=200000
+    &emplois=1
+    &chambres=2000
+    &campings=1000
+    &agricoles=5000">
     <?php include dirname(__FILE__) . "./footer.php" ?>
 </body>
-</html>
+</html> 

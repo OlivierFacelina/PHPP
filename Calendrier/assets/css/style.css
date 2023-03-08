@@ -1,0 +1,26 @@
+h1, td, form, th {
+    text-align: center;
+}
+
+td:hover {
+    background-color: orange;
+    color: white;
+}
+
+form {
+    margin-top: 20px;
+    margin-bottom: 50px;
+}
+
+table {
+    margin: 0 auto;
+}
+
+th {
+    background-color: #f8dea2;
+}
+
+th:hover {
+    background-color: black;
+    color: #f8dea2;
+}
