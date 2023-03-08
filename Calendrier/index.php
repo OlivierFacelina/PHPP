@@ -3,6 +3,25 @@
     $days = ['Lundi','Mardi','Mercredi','Jeudi','Vendredi','Samedi','Dimanche']
 ?>
 
+<?php
+// Définir la timezone
+date_default_timezone_set('Europe/Paris');
+$currentDate = new DateTime();
+// Récupérer le mois et l'année en cours
+$month = $currentDate->format('m');
+$year = $currentDate->format('Y');
+$monthLetter = ['Janvier','Février','Mars','Avril','Mai','Juin','Juillet','Août','Septembre','Octobre','Novembre','Décembre'];
+$yearSelect = ['2023','2022','2021','2020','2019','2018','2017','2016','2015','2014','2013'];
+
+// Déterminer le nombre de jours dans le mois en cours
+$days_in_month = cal_days_in_month(CAL_GREGORIAN, $month, $year);
+
+// Créer une table pour le calendrier
+echo '
+        <h1 class="title">' . date('F Y') . '</h1>
+    ';
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -25,33 +44,13 @@
 </head>
 
 <body>
-
-<?php
-// Définir la timezone
-date_default_timezone_set('Europe/Paris');
-$currentDate = new DateTime();
-// Récupérer le mois et l'année en cours
-$month = $currentDate->format('m');
-$year = $currentDate->format('Y');
-$monthLetter = ['Janvier','Février','Mars','Avril','Mai','Juin','Juillet','Août','Septembre','Octobre','Novembre','Décembre'];
-$yearSelect = ['2023','2022','2021','2020','2019','2018','2017','2016','2015','2014','2013'];
-
-// Déterminer le nombre de jours dans le mois en cours
-$days_in_month = cal_days_in_month(CAL_GREGORIAN, $month, $year);
-
-// Créer une table pour le calendrier
-echo '
-        <h1 class="title">' . date('F Y') . '</h1>
-    ';
-?>
-
 <form method="post" action="<?= $_SERVER['PHP_SELF']; ?>">
-    <select name="pets" id="pet-select">
+    <select name="monthletter" id="pet-select">
         <?php for($i=0; $i < count($monthLetter);$i++){?>
             <option value="<?= $monthLetter[$i] ?>"><?= $monthLetter[$i] ?></option>
             <?php } ?>
     </select>
-    <select name="pets" id="pet-select">
+    <select name="yearselect" id="pet-select">
         <?php for($i=0; $i < count($yearSelect);$i++){?>
             <option value="<?= $yearSelect[$i] ?>"><?= $yearSelect[$i] ?></option>
             <?php } ?>
@@ -59,17 +58,12 @@ echo '
     <button type="submit" name="submit">Valider</button>
 </form>
 <?php
-		// if(isset($_POST['submit'])) {
-		// 	$date = $_POST['date'];
-		// 	echo "La date que vous avez saisie est : " . $date . "<br>";
-		// 	$timestamp = strtotime($date);
-		// 	$jourSemaine = date('l', $timestamp);
-		// 	$jourMois = date('j', $timestamp);
-		// 	$mois = date('F', $timestamp);
-		// 	$annee = date('Y', $timestamp);
-		// 	echo "Cette date correspond au " . $jourSemaine . " " . $jourMois . " " . $mois . " " . $annee . ".";
-		// }
-	?>
+		if(isset($_POST['submit'])) {
+			$month_selected = $_POST['monthletter'];
+            $year_selected = $_POST['yearselect'];
+			echo "La date que vous avez saisie est : " . $month_selected . " " . $year_selected . "<br>";
+            }
+?>
 
 <?php
 echo '<table width="80%" border=1>';
