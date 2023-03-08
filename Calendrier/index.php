@@ -66,7 +66,7 @@ echo '
 ?>
 
 <?php
-echo '<table width="80%" border=1>';
+echo '<table width="80%" border=1 height="100%">';
 echo '<tr>
         <th>Lundi</th>
         <th>Mardi</th>
