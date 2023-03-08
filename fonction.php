@@ -41,24 +41,32 @@ EOC;
  */
 
 function getLyricsList($lyrics) {
-    $stringList = [];
-    $stringList = explode("\n", $lyrics);
-    print_r($stringList);
+    $array = explode("\n", $lyrics);
+    print_r($array);
 }
 
 /**
  * Fonction qui prend en paramètre un tableau et retourne un élément du tableau aléatoirement
  * @param Array $array
- * @return void
+ * @return String
  */
  
-function getRandLyric($lyrics) {
-    $stringList2 = explode("\n", $lyrics);
-    // print_r($stringList2);
-    $rand = array_rand($stringList2, 1);
-    echo $stringList2[$rand];
-    // print_r($rand);
+// function getRandLyric($lyrics) {
+//     $stringList2 = explode("\n", $lyrics);
+//     // print_r($stringList2);
+//     $rand = array_rand($stringList2, 1);
+//     echo $stringList2[$rand];
+//     // print_r($rand);
+// }
+
+function getRandLyric($array) {
+    $string = array_rand($array, 1);
+    return $string;
 }
+
+getRandLyric(getLyricsList($lyrics));
+// $arrayLyrics = getLyricsList($lyrics);
+// getRandLyric($arrayLyrics)
 ?>
 
 <!DOCTYPE html>
@@ -80,9 +88,8 @@ function getRandLyric($lyrics) {
         <main>
             <h1>Hello, Dolly Song</h1>
             <blockquote>
-                <p>Hello, Dolly</p>
                 <?= getLyricsList($lyrics)?>
-                <?= getRandLyric($lyrics)?>
+                <!-- <?= getRandLyric($lyrics)?> -->
                 <footer><cite>Louis Armstrong</cite> - 1964</footer>
             </blockquote>
         </main>
