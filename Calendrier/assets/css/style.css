@@ -1,4 +1,4 @@
-h1, td, form, th {
+h2, td, form, th {
     text-align: center;
 }
 
@@ -21,8 +21,28 @@ form {
 
 table {
     margin: 0 auto;
+    height: 100%;
+}
+
+.table {
+    height: 80vh;
 }
 
 th {
     background-color: #f8dea2;
+}
+
+.button {
+    text-align: center;
+}
+
+.today {
+    border-radius: 50%;
+    background-color: black;
+    color: white;
+}
+
+.today:hover {
+    background-color: white;
+    color: black;
 }

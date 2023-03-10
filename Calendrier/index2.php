@@ -5,7 +5,7 @@ $months = array(
     7 => 'Juillet', 8 => 'Août', 9 => 'Septembre', 10 => 'Octobre', 11 => 'Novembre', 12 => 'Décembre'
 );
 // Tableaux des jours de la semaine
-$days = array('Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi', 'Samedi', 'Dimanche');
+$days = array('Lun', 'Mar', 'Mer', 'Jeu', 'Ven', 'Sam', 'Dim');
 
 // Récupération du mois et de l'année depuis l'URL ou la date courante
 if (isset($_GET['month']) && isset($_GET['year'])) {
@@ -32,7 +32,7 @@ $end_days = date('N', mktime(0, 0, 0, $current_month, $nb_days, $current_year));
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
     <title>Calendrier</title>
 </head>
 
@@ -64,7 +64,7 @@ $end_days = date('N', mktime(0, 0, 0, $current_month, $nb_days, $current_year));
     <main>
         <br>
         <div class="table">
-            <table>
+            <table border=1 width="80%">
                 <!-- Jours de la semaine -->
                 <tr>
                     <?php foreach ($days as $day) { ?>
@@ -81,7 +81,7 @@ $end_days = date('N', mktime(0, 0, 0, $current_month, $nb_days, $current_year));
                     <?php
                 }
                 ?>
-                <!-- Afficher tout les jours -->
+                <!-- Afficher tous les jours -->
                 <?php
                 for ($i = 1; $i <= $nb_days; $i++) {
                     if ($start_days == 8) { ?>
@@ -109,7 +109,7 @@ $end_days = date('N', mktime(0, 0, 0, $current_month, $nb_days, $current_year));
         <br>
     </main>
     <footer>
-        <!-- Boutons pour nchanger de mois -->
+        <!-- Boutons pour changer de mois -->
         <?php
         $previous_month = $current_month - 1;
         $previous_year = $current_year;
