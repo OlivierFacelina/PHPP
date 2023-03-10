@@ -1,24 +1,38 @@
-<?php 
-    $month = ['Janvier','Février','Mars','Avril','Mai','Juin','Juillet','Août','Septembre','Octobre','Novembre','Décembre'];
-    $days = ['Lundi','Mardi','Mercredi','Jeudi','Vendredi','Samedi','Dimanche']
-?>
-
 <?php
 // Définir la timezone
 date_default_timezone_set('Europe/Paris');
-$currentDate = new DateTime();
+$currentDate = isset($_POST['submit']) ? new DateTime($_POST['submit']): new DateTime();
+
+// Pour pouvoir ajouter un mois 
+$today = date('Y-m-d'); // date actuelle
+$new_date = date('Y-m-d', strtotime('+1 month', strtotime($today))); // ajoute 1 mois à la date actuelle
+echo $new_date; // affiche la nouvelle date au format "Y-m-d"
+
 // Récupérer le mois et l'année en cours
 $month = $currentDate->format('m');
 $year = $currentDate->format('Y');
 $monthLetter = ['Janvier','Février','Mars','Avril','Mai','Juin','Juillet','Août','Septembre','Octobre','Novembre','Décembre'];
 $yearSelect = ['2023','2022','2021','2020','2019','2018','2017','2016','2015','2014','2013'];
 
+// Récupérer le mois et l'année depuis l'URL ou la date courante
+if (isset($_GET['month']) && isset($_GET['year'])) {
+    $current_month = $_GET['month'];
+    $current_year = $_GET['year'];
+} else {
+    $current_month = date('m');
+    $current_year = date('Y');
+}
+
 // Déterminer le nombre de jours dans le mois en cours
 $days_in_month = cal_days_in_month(CAL_GREGORIAN, $month, $year);
 
 // Créer une table pour le calendrier
 echo '
-        <h1 class="title">' . date('F Y') . '</h1>
+        <div class="div_title">
+            <img src="assets\images\arrow-small-left-svgrepo-com (1).svg" width="5%">
+            <h1 class="title">' . date('F Y') . '</h1>
+            <img src="assets\images\arrow-small-right-svgrepo-com.svg" width="5%">
+        </div>
     ';
 ?>
 
@@ -98,19 +112,35 @@ for ($day = 1; $day <= $days_in_month; $day++) {
         echo '</tr><tr>';
     }
 
-    // Ajouter le jour
+    // On ajoute le jour
     echo '<td>' . $day . '</td>';
 }
 
-// Ajouter des cellules vides jusqu'à la fin de la semaine (dimanche)
+// On ajoute des cellules vides jusqu'à la fin de la semaine (dimanche)
 for ($i = $day_of_week; $i < 7; $i++) {
     echo '<td></td>';
 }
 
-// Fermer la dernière ligne et la table
 echo '</tr>';
 echo '</table>';
 ?>
 
+<?php
+        $previous_month = $current_month - 1;
+        $previous_year = $current_year;
+        if ($previous_month == 0) {
+            $previous_month = 12;
+            $previous_year -= 1;
+        }
+        $next_month = $current_month + 1;
+        $next_year = $current_year;
+        if ($next_month == 13) {
+            $next_month = 1;
+            $next_year += 1;
+        } ?>
+        <div class="button">
+            <?= "<a href='?month=" . $previous_month . "&year=" . $previous_year . "'> &lt; Mois précédent</a> " ?>
+            <?= "<a href='?month=" . $next_month . "&year=" . $next_year . "'> Mois suivant &gt;</a>" ?>
+        </div>
 </body>
 </html>

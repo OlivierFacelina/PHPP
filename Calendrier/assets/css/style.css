@@ -2,6 +2,13 @@ h1, td, form, th {
     text-align: center;
 }
 
+.div_title {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
 td:hover {
     background-color: orange;
     color: white;
@@ -18,9 +25,4 @@ table {
 
 th {
     background-color: #f8dea2;
-}
-
-th:hover {
-    background-color: black;
-    color: #f8dea2;
 }
