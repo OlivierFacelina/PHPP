@@ -1,19 +1,9 @@
 <?php
 
-require('data.php');
-$theme = isset($_POST['dark']) ? 'dark' : 'light';
-
-if(!empty($_POST) && $_POST['connect']) {
-    $login = filter_var($_POST['login'],FILTER_SANITIZE_FULL_SPECIAL_CHARS);
-    $password = filter_var($_POST['password'],FILTER_SANITIZE_FULL_SPECIAL_CHARS);
-    foreach($users as $userId => $info) {
-        // if($info['login'] == $login && $info['password'] == $password) {
-            var_dump($info);
-            echo '<br>';
-            var_dump($userId);
-        // }
-    }
-}
+session_start();
+require('function.php');
+login();
+$theme = manage_user_pref();
 
 ?>
 <!DOCTYPE html>
@@ -67,7 +57,11 @@ if(!empty($_POST) && $_POST['connect']) {
                     <input class="form-control focus:shadow-outline dark:text-gray-50" name="password" type="password">
                 </div>
                 <div class="mb-3">
+                    <?php if (!isset($_SESSION['user'])): ?>    
                     <button class="px-8 py-4 bg-blue-500 hover:bg-blue-600 text-white shadow rounded" type="submit" name="connect">Se connecter</button>
+                    <?php else: ?>
+                        <button class="px-8 py-4 bg-blue-500 hover:bg-blue-600 text-white shadow rounded" type="submit" name="connect">Se déconnecter</button>
+                    <?php endif; ?>
                 </div>
             </form>
         </section>

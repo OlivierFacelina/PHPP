@@ -1,15 +1,9 @@
 <?php
-// $theme = isset($_POST['dark']) ? 'dark' : 'light';
-$theme = $_COOKIE["user_choice"] ?? 'light';
-
-if(!empty($_POST)) {
-    // var_dump($_POST);
-    $user_choice = $_POST['dark'] ?? 'light';
-    $user_choice = filter_var($user_choice,FILTER_SANITIZE_SPECIAL_CHARS);
-    setcookie("user_choice",$user_choice);
-    $theme = $user_choice;
-} 
+session_start();
+require 'function.php';
+$theme = manage_user_pref();
 ?>
+
 <!DOCTYPE html>
 <html lang="fr" class="<?= htmlspecialchars(($theme ?? '')); ?>">
 
@@ -31,7 +25,14 @@ if(!empty($_POST)) {
                     <button class="py-2 px-4 font-bold bg-gray-800" name="dark" type="submit" value="dark"><i class="fas fa-moon"></i></button>
                 </div>
             </form>
-            <a href="login.php" class="btn border-green-500 bg-green-500 hover:bg-green-700 hover:font-semibold">Se connecter</a>
+            <div class="mb-3">
+                <?php if (!isset($_SESSION['user'])): ?>    
+                <a href="login.php" class="px-8 py-4 bg-blue-500 hover:bg-blue-600 text-white shadow rounded">Se connecter</button>
+                <?php else: ?>
+                    <a href="logout.php" class="px-8 py-4 bg-blue-500 hover:bg-blue-600 text-white shadow rounded">Se déconnecter</a>
+                <?php endif; ?>
+
+            </div>
         </nav>
     </header>
     <main class="grid-in-main px-8 py-8">
