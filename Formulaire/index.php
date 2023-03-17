@@ -1,3 +1,101 @@
+<?php
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+  // var_dump($_POST);
+  $lastname = test_input($_POST["lastname"]);
+  $firstname = test_input($_POST["firstname"]);
+  $adresse = test_input($_POST["adresse"]);
+  $tel = test_input($_POST["tel"]);
+  $email = test_input($_POST["email"]);
+  $birthdate = test_input($_POST["birthdate"]);
+  $place = test_input($_POST["place"]);
+  $department = test_input($_POST["department"]);
+  $country = test_input($_POST["country"]);
+  $nationality = test_input($_POST["nationality"]);
+  $classe = test_input($_POST["classe"]);
+  $diplome = test_input($_POST["diplome"]);
+  $message = test_input($_POST["message"]);
+  // récupération des données du formulaire
+  
+  // validation des données
+  $lastnameErr = $firstnameErr = $adressErr = $telErr = $emailErr = $birthErr = $placeErr = $departmentErr = $countryErr = $nationality = $classeErr = $diplomeErr = $messageErr = "";
+  $valid = true;
+  
+  if (empty($lastname)) {
+    $lastnameErr = "Nom requis";
+    // $valid = false;
+  } else {
+    if (!preg_match("/^[a-zA-Z ]+$/",$lastname)) {
+      $lastnameErr = "Seules les lettres et les espaces sont autorisés";
+      $valid = false;
+    }
+  }
+
+  if (empty($firstname)) {
+    $firstnameErr = "Prénom requis";
+    $valid = false;
+  } else {
+    if (!preg_match("/^[a-zA-Z ]+$/",$firstname)) {
+      $firstnameErr = "Seules les lettres et les espaces sont autorisés";
+      $valid = false;
+    }
+  }
+
+  if (empty($adresse)) {
+    $adressErr = "Adresse requise";
+    $valid = false;
+  }
+  
+  if (empty($tel)) {
+    $telErr = "Tel requis";
+    $valid = false;
+  }
+  else {
+    if (!preg_match('/[^0-9\-]/i',$tel)) {
+      $telErr = "Seules les lettres et les espaces sont autorisés";
+      $valid = false;
+    }
+  }
+
+  if (empty($email)) {
+    $emailErr = "Email requis";
+    $valid = false;
+  } else {
+    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+      $emailErr = "Format d'email invalide";
+      $valid = false;
+    }
+  }
+
+  if (empty($birthdate)) {
+    $birthErr = "Date de naissance requise";
+    $valid = false;
+  } else {
+    if (!preg_match('#^([0-9]{2})/([0-9]{2})/([0-9]{4})$#',$birthdate)) {
+      $birthErr = "Le format de la date n'est pas bon";
+      $valid = false;
+    }
+  }
+
+  if (empty($message)) {
+    $messageErr = "Message requis";
+    $valid = false;
+  }
+
+  if ($valid) {
+    $confirmation = "Message envoyé avec succès";
+  }
+}
+
+// fonction pour nettoyer les données du formulaire
+function test_input($data) {
+  $data = trim($data);
+  $data = stripslashes($data);
+  $data = htmlspecialchars($data);
+  return $data;
+}
+?>
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
