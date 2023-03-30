@@ -19,7 +19,7 @@
 
     if (is_array($stores) && count($stores) > 0) { ?>
         <?php foreach ($stores as $store) {?>
-            <div class="store-row">
+            <div class="store-row section">
                 <h2>Magasin n°<?= $store->store_id ?></h2>
                 <p>Nom du manager : <?= $store->last_name ?></p>
                 <p>Code postal du magasin : <?= $store->postal_code ?></p>
@@ -31,5 +31,8 @@
         <p>Aucun acteur trouvé.</p>
     <?php }
     ?>
+<?php 
+require_once './template/footer.php' 
+?>
 </body>
 </html>

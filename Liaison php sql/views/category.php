@@ -24,7 +24,7 @@
         if ($i % 3 == 0) { ?>
             <div class='row'>
         <?php }?>
-        <div class="col-md-4">
+        <div class="col-md-4 section">
             <h2>Catégorie : <?= $category->name?></h2>  
             <p>Nombre de film dans cette catégorie : <?= $category->{'Nombre de film par catégorie'}?></p>
         </div>
@@ -42,6 +42,9 @@
 } else { ?>
     <p>Aucun acteur trouvé.</p>
 <?php }
+?>
+<?php 
+require_once './template/footer.php' 
 ?>
 </body>
 </html>

@@ -19,7 +19,7 @@
     <?php
     if (is_array($moviesActor) && count($moviesActor) > 0) { ?>
         <?php foreach ($moviesActor as $movieActor) {?>
-            <div class="movies-row">
+            <div class="movies-row section">
                 <h2>Auteur : <?= $movieActor->first_name ?> <?= $movieActor->last_name ?></h2>
                 <p>Nom du film : <?= $movieActor->title?></p>
                 <p>Description : <?= $movieActor->description ?></p>
@@ -31,5 +31,8 @@
         <p>Aucun acteur trouvé.</p>
     <?php }
     ?>
+<?php 
+require_once './template/footer.php' 
+?>
 </body>
 </html>

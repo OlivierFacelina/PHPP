@@ -19,7 +19,7 @@
 
     if (is_array($datas) && count($datas) > 0) { ?>
         <?php foreach ($datas as $data) {?>
-            <div class="financial-row">
+            <div class="financial-row section">
                 <h2>Boutique : <?= $data->staff_id?></h2>  
                 <p>Chiffre d'affaires : <?= $data->{"Chiffre d'affaires"}?>€</p>
                 <p>Nombre total de film dans la boutique : <?= $data->{"Nombre total de film"}?></p>
@@ -29,5 +29,8 @@
         <p>Aucun acteur trouvé.</p>
     <?php }
     ?>
+<?php 
+require_once './template/footer.php' 
+?>
 </body>
 </html>
