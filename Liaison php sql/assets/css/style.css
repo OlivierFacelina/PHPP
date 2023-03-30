@@ -1,0 +1,60 @@
+body {
+    background-color: black;
+    color: white;
+}
+
+.netflix {
+    margin-top: 5px;
+    width: 10vw;
+}
+
+.nav-menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+nav a {
+    margin-left: 5vh;
+    text-decoration: none;
+    color: white;
+}
+
+nav a:hover {
+    border: 1px solid white;
+    background-color: white;
+    color: black;
+}
+
+h1 {
+    margin-top: 10vh;
+    margin-bottom: 30vh;
+    font-size: 62px;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.row {
+    text-align: center;
+    margin-bottom: 10vh;
+}
+
+/* PAGE MOVIES ACTORS */
+
+.movies-row {
+    text-align: center;
+}
+
+/* PAGE STORE */
+
+.store-row {
+    text-align: center;
+    margin-bottom: 10vh;
+}
+
+/* PAGE FINANCIAL */
+
+.financial-row {
+    text-align: center;
+    margin-bottom: 10vh;
+}
