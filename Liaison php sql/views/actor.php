@@ -28,6 +28,7 @@ if (is_array($actors) && count($actors) > 0) {
             <p>Prénom : <?= $actor->first_name ?></p>
             <p>Nom : <?= $actor->last_name ?></p>
             <p>Dernière modification : <?= $actor->last_update ?></p>
+            <a href="http://localhost/PHP/Liaison%20php%20sql/?page=movieActor&actor_id=<?=$actor->actor_id?>">Voir page</a>
         </div>
         <?php
         // Si l'index est un multiple de 3 moins 1, on ferme la ligne

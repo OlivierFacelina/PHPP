@@ -22,7 +22,7 @@
             <div class="store-row section">
                 <h2>Magasin n°<?= $store->store_id ?></h2>
                 <p>Nom du manager : <?= $store->last_name ?></p>
-                <p>Code postal du magasin : <?= $store->postal_code ?></p>
+                <p>Code postal du magasin : <?= $store->address ?></p>
                 <p>Ville : <?= $store->city ?></p>
                 <p>Adresse electronique de contact : <?= $store->email ?></p>
             </div>

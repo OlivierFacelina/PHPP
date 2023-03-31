@@ -25,12 +25,11 @@
         <div class='row'>
         <?php }?>
         <div class="col-md-4 section">
-            <h2>Film <?= $movie->film_id ?></h2>
-            <p>Titre du livre : <?= $movie->title ?></p>
-            <p>Description du livre : <?= $movie->description ?></p>
+            <h2><?= $movie->title ?></h2>
+            <p>Description du film : <?= $movie->description ?></p>
             <p>Date de sortie : <?= $movie->release_year ?></p>
-            <p>Durée du film : <?= $movie->rental_duration ?></p>
-            <p>Note du film : <?= $movie->rental_rate ?>/5</p>
+            <p>Durée du film : <?= $movie->length ?> min</p>
+            <p>Note du film : <?= $movie->rating ?></p>
             <p>Informations particulières : <?= $movie->special_features ?></p>
         </div>
         <?php

@@ -3,7 +3,7 @@ require 'connexion.php';
 function get_movie() {
     $db = connexionBdd();
     $sql = <<<EOD
-    SELECT `film_id`, `title`, `description`, `release_year`, `rental_duration`, `rental_rate`, `special_features`
+    SELECT `title`, `description`, `release_year`, `length`, `rating`, `special_features`
     FROM `film`
     LIMIT 15
     EOD;

@@ -1,6 +1,8 @@
 body {
     background-color: black;
     color: white;
+    margin: 0;
+    padding: 0;
 }
 
 .netflix {
@@ -11,7 +13,8 @@ body {
 .nav-menu {
     display: flex;
     justify-content: space-between;
-    align-items: flex-start;
+    align-items: center;
+
 }
 
 nav a {
@@ -41,6 +44,16 @@ h1 {
 
 .section {
     margin-bottom: 10vh;
+}
+
+.section a {
+    display: inline-block;
+    border: 1px solid white;
+    background-color: white;
+    color: black;
+    height: 30px;
+    width: 100px;
+    padding-top: 0.5vh;
 }
 
 /* PAGE MOVIES ACTORS */

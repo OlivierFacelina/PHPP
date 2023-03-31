@@ -3,7 +3,7 @@ require 'connexion.php';
 function get_store() {
     $db = connexionBdd();
     $sql = <<<EOD
-    SELECT store.store_id, staff.last_name, address.postal_code, city.city, staff.email
+    SELECT store.store_id, staff.last_name, address.address, city.city, staff.email
     FROM store
     JOIN staff ON store.store_id = staff.store_id
     JOIN address ON store.address_id = address.address_id
