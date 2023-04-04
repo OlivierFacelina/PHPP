@@ -5,7 +5,7 @@ function get_movie() {
     $sql = <<<EOD
     SELECT `title`, `description`, `release_year`, `length`, `rating`, `special_features`
     FROM `film`
-    LIMIT 15
+    LIMIT 15;  
     EOD;
     $postStmt = $db->prepare($sql);
     $postStmt->execute();
