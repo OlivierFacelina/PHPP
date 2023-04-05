@@ -3,12 +3,12 @@ require 'connexion.php';
 function get_data_financial() {
     $db = connexionBdd();
     $sql = <<<EOD
-    SELECT `payment`.`staff_id`,SUM(`payment`.`amount` * `film`.`length`) AS "Chiffre d'affaires", SUM(`inventory`.`inventory_id`) AS "Nombre total de film"
+    SELECT SUM(`payment`.`amount`) AS 'CA", `store`.`store_id`
     FROM `payment`
     JOIN `rental` ON `payment`.`rental_id` = `rental`.`rental_id`
     JOIN `inventory` ON `rental`.`inventory_id` = `inventory`.`inventory_id`
-    JOIN `film` ON `inventory`.`film_id` = `film`.`film_id`
-    GROUP BY `payment`.`staff_id`
+    JOIN `store` ON `inventory`.`store_id` = `store`.`store_id`
+    GROUP BY `store`.`store_id`
     EOD;
     $postStmt = $db->prepare($sql);
     $postStmt->execute();
