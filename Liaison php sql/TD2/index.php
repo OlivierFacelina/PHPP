@@ -8,24 +8,30 @@ if(isset($_GET["page"])) {
             case "incomes":
                 require './controllers/incomesControllers.php';
                 break;
-                case "page3":
-                    require './controllers/page3Controllers.php';
+                case "expenses":
+                    require './controllers/expensesControllers.php';
                     break;
-                    case "page4":
-                        require './controllers/page4Controllers.php';
+                    case "details":
+                        require './controllers/detailsControllers.php';
                         break;
-                        case "page5":
-                            require './controllers/page5Controllers.php';
+                        case "update_incomes":
+                            require './controllers/updateIncControllers.php';
                             break;
-                            case "page6":
-                                require './controllers/page6Controllers.php';
+                            case "delete_incomes":
+                                require './controllers/deleteIncControllers.php';
                                 break;
-                                case "page7":
-                                    require './controllers/page7Controllers.php';
+                                case "update_expenses":
+                                    require './controllers/updateExpControllers.php';
                                     break;  
-                                    default:
-                                        require './controllers/error404.php';
+                                    case "delete_expenses":
+                                        require './controllers/deleteExpControllers.php';
                                         break;
+                                        case "management":
+                                            require './controllers/managementControllers.php';
+                                            break;
+                                            default:
+                                                require './controllers/error404.php';
+                                                break;
     }
 } else {
     require './controllers/userLoginControllers.php';

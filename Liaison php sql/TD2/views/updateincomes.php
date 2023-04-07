@@ -15,9 +15,12 @@
             <option value="<?= $user->user_id ?>"><?= $user->first_name?><?= $user->last_name?></option>
             <?php } ?>
         </select><br>
-        <label for="amount">Montant du revenu</label>
-        <input type="text" name="amount" id="amount"><br>
-        <input type="text" name="cat_id" id="cat_id">
+        <label for="amount">Montant du revenu :</label>
+        <input type="text" name="upd_amount" id="amount"><br>
+        <label for="upd_cat_id" id="upd_cat_id">Type de salaire :</label>
+        <input type="text" name="upd_cat_id" id="cat_id"><br>
+        <label for="inc_id" id="inc_id">Numéro de revenu :</label>
+        <input type="text" name="inc_id" id="inc_id"><br>
         <input type="submit" name="submit">
     </form>
 </body>

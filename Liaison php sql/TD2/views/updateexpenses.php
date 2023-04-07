@@ -7,7 +7,7 @@
   <title>Document</title>
 </head>
 <body>
-  <h1>Les revenus d'un utilisateur</h1>
+  <h1>Les dépenses d'un utilisateur</h1>
     <form method="post">
         <select name="user_id">
         <option value="">Sélectionner vos users</option>
@@ -15,9 +15,12 @@
             <option value="<?= $user->user_id ?>"><?= $user->first_name?><?= $user->last_name?></option>
             <?php } ?>
         </select><br>
-        <label for="amount">Montant du revenu</label>
-        <input type="text" name="amount" id="amount"><br>
-        <input type="text" name="cat_id" id="cat_id">
+        <label for="exp_amount">Montant des dépenses :</label>
+        <input type="text" name="exp_amount" id="exp_amount"><br>
+        <label for="exp_label">Type d'achat :</label>
+        <input type="text" name="exp_label" id="exp_label"><br>
+        <label for="exp_id" id="exp_id">Numéro de dépense :</label>
+        <input type="text" name="exp_id" id="exp_id"><br>
         <input type="submit" name="submit">
     </form>
 </body>

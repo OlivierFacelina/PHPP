@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
@@ -21,8 +21,6 @@
     <p><?= $user->first_name?></p>
     <p><?= $user->last_name?></p>
     <p><?= $user->birth_date?></p>
-    <a href="./views/updateincomes.php"><input type="submit" name="update" value="Modifier l'utilisateur"></a>
-    <a href="./views/deleteincomes.php"><input type="submit" name="delete" value="Supprimer l'utilisateur"></a>
   <?php } ?>
 </body>
-</html>
+</html> -->
