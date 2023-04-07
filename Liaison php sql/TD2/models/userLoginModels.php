@@ -17,7 +17,7 @@ function create_users($db, $first_name, $last_name, $birth_date) {
 		die('Erreur : ' . $e->getMessage());
     }
 }
-
+ 
 function get_users($db) {
   try {
       $sql = <<<EOD

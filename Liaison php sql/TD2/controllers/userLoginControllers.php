@@ -2,6 +2,7 @@
 require './models/userLoginModels.php';
 require './models/connexion.php';
 $db = connexionBdd();
+$users = null;
 if($_SERVER["REQUEST_METHOD"] == "POST") {
   $first_name = FILTER_INPUT(INPUT_POST,"firstname",FILTER_SANITIZE_FULL_SPECIAL_CHARS);
   $last_name = FILTER_INPUT(INPUT_POST,"lastname",FILTER_SANITIZE_FULL_SPECIAL_CHARS);

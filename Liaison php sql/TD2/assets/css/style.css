@@ -1,0 +1,28 @@
+body {
+    background-color: #146C94;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.create_user {
+    background-color: #F6F1F1;
+    width: 30%;
+    height: 250px;
+}
+
+h1 {
+    text-align: center;
+    color: #000000;
+}
+
+form {
+    text-align: center;
+}
+
+input {
+    margin-top: 2vh;
+}
