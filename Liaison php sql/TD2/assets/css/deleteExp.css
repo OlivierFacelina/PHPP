@@ -1,0 +1,37 @@
+body {
+    background-color: #146C94;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.create_user {
+    background-color: #F6F1F1;
+    width: 40%;
+    height: 250px;
+    display: flex;
+    flex-direction: column;
+}
+
+h1 {
+    text-align: center;
+    color: #000000;
+    margin-bottom: 5vh;
+}
+
+form {
+    margin-left: 7vh;
+}
+
+#exp_id {
+    width: 70%;
+}
+
+#submit {
+    background-color: #19A7CE;
+    color: #F6F1F1;
+    border: none;
+}
